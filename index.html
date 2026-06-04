@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>၁၃၈၇ (၂၀၂၆) ဓမ္မာစရိယအောင်စာရင်း</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <style>
+        /* ကိုယ်ပိုင် ဖောင့်များ ထည့်သွင်းခြင်း */
+        @font-face {
+            font-family: 'Aka02';
+            src: url('./Aka02-Regular.ttf') format('truetype');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Aka011';
+            src: url('./Aka011-Bold.ttf') format('truetype');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Handwriting';
+            src: url('./Uni-Burmese Handwriting 01_Style 01_Regular.ttf') format('truetype');
+            font-display: swap;
+        }
+
+        /* Default Font ကို Aka011 အဖြစ် သတ်မှတ်ခြင်း */
+        body { 
+            font-family: 'Aka011', sans-serif; 
+            background-color: #0B1021; /* နက်ပြာရောင် အောက်ခံ */
+        }
+        
+        /* ခေါင်းစဉ်များအတွက် Aka02 */
+        .title-font { font-family: 'Aka02', sans-serif; }
+        
+        /* လက်ရေးစာလုံးအတွက် Handwriting */
+        .signature-font { font-family: 'Handwriting', cursive; }
+
+        /* OS Style Advanced Glassmorphism */
+        .glass-panel {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        /* Animated Liquid Background */
+        .blob-1 { animation: float 15s ease-in-out infinite; }
+        .blob-2 { animation: float 18s ease-in-out infinite reverse; }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        /* Marquee Animation */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.8) 100%);
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-between relative overflow-x-hidden text-slate-200">
+
+    <!-- နောက်ခံ Animated Gradient Mesh (နက်ပြာရောင်) -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-900/40 rounded-full blur-[100px] blob-1"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-indigo-900/40 rounded-full blur-[120px] blob-2"></div>
+        <div class="absolute top-[40%] left-[40%] w-[400px] h-[400px] bg-cyan-900/20 rounded-full blur-[80px] blob-1"></div>
+    </div>
+
+    <div class="w-full max-w-3xl px-4 py-10 flex-grow flex flex-col justify-center">
+        <!-- Main Container -->
+        <div class="glass-panel rounded-3xl p-6 md:p-10 relative z-10 w-full">
+            
+            <div class="text-center mb-10">
+                <h1 class="title-font text-3xl md:text-5xl font-bold text-white mb-4 tracking-wide drop-shadow-[0_2px_15px_rgba(255,255,255,0.3)]">
+                    ၁၃၈၇ (၂၀၂၆) ဓမ္မာစရိယအောင်စာရင်း
+                </h1>
+                <p class="text-blue-300 text-sm md:text-base opacity-90 tracking-wide">သာသနာရေးဦးစီးဌာနမှ ထုတ်ပြန်သော အောင်စာရင်းများ</p>
+            </div>
+
+            <!-- Quick Nationwide Links (အထူးအောင် နှင့် ဂုဏ်ထူး) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 border-b border-white/10 pb-8">
+                <button onclick="window.open('LINK_FOR_SPECIAL_PASS', '_blank')" class="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-600/20 to-orange-600/20 border border-amber-500/30 hover:bg-amber-600/30 text-amber-300 py-3 px-4 rounded-2xl transition-all duration-300 shadow-[0_0_15px_rgba(217,119,6,0.15)]">
+                    <span class="text-xl">🏆</span> အထူးအောင် (၃) ပါး စာရင်း
+                </button>
+                <button onclick="window.open('LINK_FOR_HONORS_PASS', '_blank')" class="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 border border-emerald-500/30 hover:bg-emerald-600/30 text-emerald-300 py-3 px-4 rounded-2xl transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+                    <span class="text-xl">⭐</span> ပါဠိ/မြန်မာ ဂုဏ်ထူးအောင် စာရင်း
+                </button>
+            </div>
+
+            <!-- Search Form -->
+            <form class="space-y-6" id="searchForm">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-white/80 text-sm md:text-base mb-2 tracking-wide">တိုင်းဒေသကြီး / ပြည်နယ်</label>
+                        <select id="stateSelect" class="w-full bg-white/5 border border-white/10 text-white rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-500/50 appearance-none transition-all cursor-pointer shadow-inner">
+                            <option value="" class="text-gray-900">ရွေးချယ်ပါ</option>
+                            <option value="ကချင်" class="text-gray-900">ကချင်ပြည်နယ်</option>
+                            <option value="ကယား" class="text-gray-900">ကယားပြည်နယ်</option>
+                            <option value="ကရင်" class="text-gray-900">ကရင်ပြည်နယ်</option>
+                            <option value="ချင်း" class="text-gray-900">ချင်းပြည်နယ်</option>
+                            <option value="စစ်ကိုင်း" class="text-gray-900">စစ်ကိုင်းတိုင်းဒေသကြီး</option>
+                            <option value="တနင်္သာရီ" class="text-gray-900">တနင်္သာရီတိုင်းဒေသကြီး</option>
+                            <option value="နေပြည်တော်" class="text-gray-900">နေပြည်တော်ကောင်စီ</option>
+                            <option value="ပဲခူး (အရှေ့ပိုင်း)" class="text-gray-900">ပဲခူးတိုင်းဒေသကြီး (အရှေ့ပိုင်း)</option>
+                            <option value="ပဲခူး (အနောက်ပိုင်း)" class="text-gray-900">ပဲခူးတိုင်းဒေသကြီး (အနောက်ပိုင်း)</option>
+                            <option value="မကွေး" class="text-gray-900">မကွေးတိုင်းဒေသကြီး</option>
+                            <option value="မန္တလေး" class="text-gray-900">မန္တလေးတိုင်းဒေသကြီး</option>
+                            <option value="မွန်" class="text-gray-900">မွန်ပြည်နယ်</option>
+                            <option value="ရခိုင်" class="text-gray-900">ရခိုင်ပြည်နယ်</option>
+                            <option value="ရန်ကုန် (အရှေ့ပိုင်း)" class="text-gray-900">ရန်ကုန်တိုင်းဒေသကြီး (အရှေ့ပိုင်း)</option>
+                            <option value="ရန်ကုန် (အနောက်ပိုင်း)" class="text-gray-900">ရန်ကုန်တိုင်းဒေသကြီး (အနောက်ပိုင်း)</option>
+                            <option value="ရန်ကုန် (တောင်ပိုင်း)" class="text-gray-900">ရန်ကုန်တိုင်းဒေသကြီး (တောင်ပိုင်း)</option>
+                            <option value="ရန်ကုန် (မြောက်ပိုင်း)" class="text-gray-900">ရန်ကုန်တိုင်းဒေသကြီး (မြောက်ပိုင်း)</option>
+                            <option value="ရှမ်း (အရှေ့ပိုင်း)" class="text-gray-900">ရှမ်းပြည်နယ် (အရှေ့ပိုင်း)</option>
+                            <option value="ရှမ်း (တောင်ပိုင်း)" class="text-gray-900">ရှမ်းပြည်နယ် (တောင်ပိုင်း)</option>
+                            <option value="ရှမ်း (မြောက်ပိုင်း)" class="text-gray-900">ရှမ်းပြည်နယ် (မြောက်ပိုင်း)</option>
+                            <option value="ဧရာဝတီ" class="text-gray-900">ဧရာဝတီတိုင်းဒေသကြီး</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-white/80 text-sm md:text-base mb-2 tracking-wide">အောင်မြင်မှု အဆင့်</label>
+                        <select id="levelSelect" class="w-full bg-white/5 border border-white/10 text-white rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-500/50 appearance-none transition-all cursor-pointer shadow-inner">
+                            <option value="" class="text-gray-900">ရွေးချယ်ပါ</option>
+                            <option value="ကျမ်းပြီး" class="text-gray-900">ကျမ်းရင်းသုံးကျမ်း (ကျမ်းပြီး)</option>
+                            <option value="နှစ်ကျမ်းစွဲ" class="text-gray-900">ကျမ်းရင်းနှစ်ကျမ်းအောင်</option>
+                            <option value="တစ်ကျမ်းစွဲ" class="text-gray-900">ကျမ်းရင်းတစ်ကျမ်းအောင်</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="button" id="searchBtn" class="w-full mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-lg rounded-2xl px-4 py-4 transition-all duration-300 shadow-[0_0_20px_rgba(79,70,229,0.4)] hover:shadow-[0_0_30px_rgba(79,70,229,0.6)] border border-blue-400/20 tracking-wider">
+                    ရှာဖွေမည်
+                </button>
+            </form>
+
+            <!-- Signature (Prominent & Beautiful with Handwriting Font) -->
+            <div class="mt-14 flex justify-center">
+                <div class="relative group cursor-default">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="relative inline-flex items-center gap-3 px-8 py-3 rounded-full bg-[#0B1021]/80 border border-white/10 backdrop-blur-md">
+                        <span class="text-yellow-400 text-xl animate-pulse">✦</span>
+                        <p class="text-white/80 flex items-center gap-3">
+                            <span class="signature-font font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-200 to-indigo-300 text-2xl md:text-3xl tracking-widest drop-shadow-md">
+                                ဘုန်းသန္တိ
+                            </span>
+                            <span class="text-sm tracking-widest uppercase opacity-70 mt-1">ဖန်တီးသည်</span>
+                        </p>
+                        <span class="text-yellow-400 text-xl animate-pulse">✦</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sponsor Marquee -->
+    <div class="marquee-container py-3 backdrop-blur-md z-20 relative">
+        <div class="marquee-content flex items-center gap-12">
+            <!-- လိုဂိုပုံ ထည့်ရန် `src` တွင် လင့်ခ်ချိတ်ပါ -->
+            <div class="flex items-center gap-3">
+                <img src="https://via.placeholder.com/40" alt="Sponsor Logo" class="w-8 h-8 rounded-full border border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.2)]">
+                <span class="text-white/80 text-sm md:text-base tracking-wide">ဤဝဘ်ဆိုဒ်ကို <span class="title-font text-yellow-400 text-lg">ဦး___ + ဒေါ်___ မိသားစု</span> မှ ဓမ္မဒါန ကုသိုလ်ပြု ပံ့ပိုးလှူဒါန်းပါသည်။</span>
+            </div>
+            <!-- ဒုတိယအကြိမ် ပြန်ပေါ်ရန် (Animation ချောမွေ့စေရန်) -->
+            <div class="flex items-center gap-3">
+                <img src="https://via.placeholder.com/40" alt="Sponsor Logo" class="w-8 h-8 rounded-full border border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.2)]">
+                <span class="text-white/80 text-sm md:text-base tracking-wide">ဤဝဘ်ဆိုဒ်ကို <span class="title-font text-yellow-400 text-lg">ဦး___ + ဒေါ်___ မိသားစု</span> မှ ဓမ္မဒါန ကုသိုလ်ပြု ပံ့ပိုးလှူဒါန်းပါသည်။</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let driveLinksData = {};
+
+        fetch('./data.json')
+            .then(response => {
+                if (!response.ok) throw new Error("JSON ဖိုင်ကို ရှာမတွေ့ပါ။");
+                return response.json();
+            })
+            .then(data => driveLinksData = data)
+            .catch(error => console.error("Error:", error));
+
+        document.getElementById('searchBtn').addEventListener('click', function() {
+            const state = document.getElementById('stateSelect').value;
+            const level = document.getElementById('levelSelect').value;
+
+            if (!state || !level) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'အချက်အလက် လိုအပ်ပါသည်',
+                    text: 'ကျေးဇူးပြု၍ တိုင်း/ပြည်နယ် နှင့် အတန်းကို ရွေးချယ်ပါ။',
+                    background: '#0F172A', color: '#f8fafc', confirmButtonColor: '#4f46e5',
+                    customClass: { popup: 'border border-slate-700 rounded-2xl' }
+                });
+                return;
+            }
+
+            if (driveLinksData[state] && driveLinksData[state][level]) {
+                const targetUrl = driveLinksData[state][level];
+                
+                if (targetUrl.trim() !== "") {
+                    Swal.fire({
+                        title: 'ရှာဖွေနေပါသည်...',
+                        text: 'Google Drive သို့ ခေါ်ဆောင်သွားပါမည်',
+                        icon: 'success',
+                        timer: 1500,
+                        showConfirmButton: false,
+                        background: '#0F172A', color: '#f8fafc',
+                        customClass: { popup: 'border border-slate-700 rounded-2xl' }
+                    }).then(() => {
+                        window.open(targetUrl, '_blank');
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'မကြာမီ လာမည်',
+                        text: 'လင့်ခ် မရရှိသေးပါ။',
+                        background: '#0F172A', color: '#f8fafc', confirmButtonColor: '#4f46e5',
+                        customClass: { popup: 'border border-slate-700 rounded-2xl' }
+                    });
+                }
+            } else {
+                Swal.fire({
+                    icon: 'info',
+                    title: 'မကြာမီ လာမည်',
+                    text: 'အောင်စာရင်း မထွက်ရှိသေးပါ။',
+                    background: '#0F172A', color: '#f8fafc', confirmButtonColor: '#4f46e5',
+                    customClass: { popup: 'border border-slate-700 rounded-2xl' }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
