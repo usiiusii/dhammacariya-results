@@ -31,6 +31,7 @@
             background: linear-gradient(135deg, #000000 0%, #081229 50%, #000000 100%);
             background-size: 400% 400%;
             animation: bgGradient 15s ease infinite;
+            overflow-x: hidden;
         }
 
         @keyframes bgGradient {
@@ -119,6 +120,39 @@
             background-clip: text;
             animation: goldShimmer 4s linear infinite;
         }
+
+        /* ဓာတ်ပုံနောက်ခံ မီးခိုးတန်း (Smoke Trail) Effect */
+        @keyframes smokeTrail {
+            0% { transform: scale(0.8) translate(0, 0); opacity: 0.6; }
+            100% { transform: scale(1.6) translate(25px, -20px); opacity: 0; filter: blur(10px); }
+        }
+        .smoke-particle {
+            position: absolute;
+            inset: -4px;
+            background: radial-gradient(circle, rgba(148, 163, 184, 0.5) 0%, transparent 60%);
+            border-radius: 50%;
+            filter: blur(5px);
+            z-index: 0;
+            animation: smokeTrail 2s infinite ease-out;
+        }
+        .smoke-delay-1 { animation-delay: 0.6s; }
+        .smoke-delay-2 { animation-delay: 1.2s; }
+
+        /* Profile Diagonal Swoop Animation */
+        #authorBadge {
+            position: fixed;
+            top: 20%;
+            right: 20%;
+            transform: translate(250%, -250%);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); /* အဝင်သွက်ပြီး အနည်းငယ် Bounce ဖြစ်စေသည် */
+            z-index: 9999;
+            pointer-events: none;
+        }
+        #authorBadge.swoop-in {
+            transform: translate(0, 0);
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center justify-between relative overflow-x-hidden text-slate-200">
@@ -129,15 +163,29 @@
         <div class="absolute top-[40%] left-[40%] w-[400px] h-[400px] bg-cyan-900/20 rounded-full blur-[80px] blob-1"></div>
     </div>
 
-    <div class="w-full max-w-3xl px-4 py-10 flex-grow flex flex-col justify-center">
-        <div class="glass-panel rounded-3xl p-6 md:p-10 relative z-10 w-full">
+    <div id="authorBadge" class="flex items-center gap-3 bg-[#0B1021]/80 backdrop-blur-xl border border-white/10 p-2 pr-5 rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.5)]">
+        <div class="relative w-12 h-12 flex items-center justify-center">
+            <div class="smoke-particle"></div>
+            <div class="smoke-particle smoke-delay-1"></div>
+            <div class="smoke-particle smoke-delay-2"></div>
+            
+            <img src="./profile.png" alt="Developer" class="w-full h-full object-contain relative z-10 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]">
+        </div>
+        <div class="flex flex-col">
+            <span class="text-[10px] text-slate-400 opacity-80 uppercase tracking-widest font-sans">Developer</span>
+            <span class="text-white font-bold text-sm signature-font tracking-wide mt-0.5">ဘုန်းသန္တိ</span>
+        </div>
+    </div>
+
+    <div class="w-full max-w-3xl px-4 py-10 flex-grow flex flex-col justify-center relative z-10">
+        <div class="glass-panel rounded-3xl p-6 md:p-10 relative w-full">
             
             <div class="text-center mb-10">
                 <h1 class="title-font text-3xl md:text-5xl font-bold gold-flow-text mb-4 tracking-wide drop-shadow-[0_2px_15px_rgba(255,255,255,0.3)] leading-[1.6]">
                     ၁၃၈၇ (၂၀၂၆) ဓမ္မာစရိယအောင်စာရင်း
                 </h1>
                 <p class="text-blue-300 text-sm md:text-base opacity-90 tracking-wide mt-2">သာသနာရေးဦးစီးဌာနမှ ထုတ်ပြန်သော အောင်စာရင်းများ</p>
-                  <p class="text-blue-300 text-sm md:text-base opacity-90 tracking-wide mt-2">(ဤဝဘ်ဆိုဒ်သည် ဇွန်လ ၅ ရက်၊ မနက်လွန်မှ အသက်ဝင်ပါမည်)</p>
+                <p class="text-blue-300 text-sm md:text-base opacity-90 tracking-wide mt-2">(ဤဝဘ်ဆိုဒ်သည် ဇွန်လ ၅ ရက်၊ မနက်လွန်မှ အသက်ဝင်ပါမည်)</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 border-b border-white/10 pb-8">
@@ -213,7 +261,7 @@
                             <span class="signature-font inline-block pb-2 pt-1 leading-loose font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-200 to-indigo-300 text-2xl md:text-3xl tracking-widest drop-shadow-md">
                                 ဘုန်းသန္တိ
                             </span>
-                            <span class="text-sm tracking-widest uppercase opacity-70 mt-1">ဖန်တီးသည်</span>
+                            <span class="text-sm tracking-widest uppercase opacity-70 mt-1 font-sans">ဖန်တီးသည်</span>
                         </p>
                         <span class="text-yellow-400 text-xl animate-pulse">✦</span>
                     </div>
@@ -222,7 +270,7 @@
         </div>
     </div>
 
-    <div class="marquee-container py-3 backdrop-blur-md z-20 relative">
+    <div class="marquee-container py-3 backdrop-blur-md z-20 relative font-sans">
         <div class="marquee-content flex items-center gap-12">
             <div class="flex items-center gap-3">
                 <img src="https://via.placeholder.com/40" alt="Sponsor Logo" class="w-8 h-8 rounded-full border border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.2)]">
@@ -302,6 +350,15 @@
             });
         });
 
+        // ဓာတ်ပုံလေး လျှောဆင်း/ပြန်တက် Animation ထိန်းချုပ်မှု
+        const avatarBadge = document.getElementById('authorBadge');
+        function showAvatar() {
+            avatarBadge.classList.add('swoop-in');
+        }
+        function hideAvatar() {
+            avatarBadge.classList.remove('swoop-in');
+        }
+
         // Search Logic
         let driveLinksData = {};
 
@@ -323,7 +380,9 @@
                     timer: 2000,
                     showConfirmButton: false,
                     background: 'transparent',
-                    customClass: { popup: 'glass-swal' }
+                    customClass: { popup: 'glass-swal' },
+                    didOpen: () => { showAvatar(); },
+                    willClose: () => { hideAvatar(); }
                 }).then(() => {
                     window.open(targetUrl, '_blank');
                 });
@@ -334,7 +393,9 @@
                     text: 'လင့်ခ် မရရှိသေးပါ။',
                     background: 'transparent',
                     customClass: { popup: 'glass-swal' },
-                    confirmButtonColor: '#4f46e5'
+                    confirmButtonColor: '#4f46e5',
+                    didOpen: () => { showAvatar(); },
+                    willClose: () => { hideAvatar(); }
                 });
             }
         }
@@ -351,7 +412,9 @@
                     text: 'ကျေးဇူးပြု၍ တိုင်း/ပြည်နယ် နှင့် အတန်းကို ရွေးချယ်ပါ။',
                     background: 'transparent', 
                     customClass: { popup: 'glass-swal' },
-                    confirmButtonColor: '#4f46e5'
+                    confirmButtonColor: '#4f46e5',
+                    didOpen: () => { showAvatar(); },
+                    willClose: () => { hideAvatar(); }
                 });
                 return;
             }
@@ -365,7 +428,9 @@
                     text: 'အောင်စာရင်း မထွက်ရှိသေးပါ။',
                     background: 'transparent',
                     customClass: { popup: 'glass-swal' },
-                    confirmButtonColor: '#4f46e5'
+                    confirmButtonColor: '#4f46e5',
+                    didOpen: () => { showAvatar(); },
+                    willClose: () => { hideAvatar(); }
                 });
             }
         });
