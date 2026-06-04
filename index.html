@@ -121,37 +121,38 @@
             animation: goldShimmer 4s linear infinite;
         }
 
-        /* ဓာတ်ပုံနောက်ခံ မီးခိုးတန်း (Smoke Trail) Effect */
-        @keyframes smokeTrail {
-            0% { transform: scale(0.8) translate(0, 0); opacity: 0.6; }
-            100% { transform: scale(1.6) translate(25px, -20px); opacity: 0; filter: blur(10px); }
-        }
-        .smoke-particle {
-            position: absolute;
-            inset: -4px;
-            background: radial-gradient(circle, rgba(148, 163, 184, 0.5) 0%, transparent 60%);
-            border-radius: 50%;
-            filter: blur(5px);
-            z-index: 0;
-            animation: smokeTrail 2s infinite ease-out;
-        }
-        .smoke-delay-1 { animation-delay: 0.6s; }
-        .smoke-delay-2 { animation-delay: 1.2s; }
-
         /* Profile Diagonal Swoop Animation */
         #authorBadge {
             position: fixed;
-            top: 20%;
-            right: 20%;
-            transform: translate(250%, -250%);
+            top: 15%;
+            right: 15%;
+            transform: translate(200vw, -200vh);
             opacity: 0;
-            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); /* အဝင်သွက်ပြီး အနည်းငယ် Bounce ဖြစ်စေသည် */
+            transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
             z-index: 9999;
             pointer-events: none;
         }
         #authorBadge.swoop-in {
             transform: translate(0, 0);
             opacity: 1;
+        }
+
+        /* လေယာဉ်ပျံ မီးခိုးတန်း (Airplane Contrail) Effect */
+        @keyframes contrailBlast {
+            0% { transform: rotate(-45deg) translateX(0) scaleX(0.2) scaleY(0.5); opacity: 0.9; filter: blur(2px); }
+            100% { transform: rotate(-45deg) translateX(180px) scaleX(2) scaleY(2.5); opacity: 0; filter: blur(12px); }
+        }
+        .airplane-contrail {
+            position: absolute;
+            top: 25%;
+            left: 65%;
+            width: 140px;
+            height: 12px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+            border-radius: 20px;
+            transform-origin: left center;
+            z-index: -1;
+            animation: contrailBlast 0.9s infinite ease-out;
         }
     </style>
 </head>
@@ -163,17 +164,14 @@
         <div class="absolute top-[40%] left-[40%] w-[400px] h-[400px] bg-cyan-900/20 rounded-full blur-[80px] blob-1"></div>
     </div>
 
-    <div id="authorBadge" class="flex items-center gap-3 bg-[#0B1021]/80 backdrop-blur-xl border border-white/10 p-2 pr-5 rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.5)]">
-        <div class="relative w-12 h-12 flex items-center justify-center">
-            <div class="smoke-particle"></div>
-            <div class="smoke-particle smoke-delay-1"></div>
-            <div class="smoke-particle smoke-delay-2"></div>
+    <div id="authorBadge">
+        <div class="relative w-40 h-40 md:w-56 md:h-56 flex items-center justify-center">
             
-            <img src="./profile.png" alt="Developer" class="w-full h-full object-contain relative z-10 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]">
-        </div>
-        <div class="flex flex-col">
-            <span class="text-[10px] text-slate-400 opacity-80 uppercase tracking-widest font-sans">Developer</span>
-            <span class="text-white font-bold text-sm signature-font tracking-wide mt-0.5">ဘုန်းသန္တိ</span>
+            <div class="airplane-contrail"></div>
+            <div class="airplane-contrail" style="animation-delay: 0.3s;"></div>
+            <div class="airplane-contrail" style="animation-delay: 0.6s;"></div>
+            
+            <img src="./profile.png" alt="Developer" class="w-full h-full object-contain relative z-10 drop-shadow-[0_15px_30px_rgba(255,255,255,0.4)]">
         </div>
     </div>
 
@@ -184,21 +182,21 @@
                 <h1 class="title-font text-3xl md:text-5xl font-bold gold-flow-text mb-4 tracking-wide drop-shadow-[0_2px_15px_rgba(255,255,255,0.3)] leading-[1.6]">
                     ၁၃၈၇ (၂၀၂၆) ဓမ္မာစရိယအောင်စာရင်း
                 </h1>
-                <p class="text-blue-300 text-sm md:text-base opacity-90 tracking-wide mt-2">သာသနာရေးဦးစီးဌာနမှ ထုတ်ပြန်သော အောင်စာရင်းများ</p>
-                <p class="text-blue-300 text-sm md:text-base opacity-90 tracking-wide mt-2">(ဤဝဘ်ဆိုဒ်သည် ဇွန်လ ၅ ရက်၊ မနက်လွန်မှ အသက်ဝင်ပါမည်)</p>
+                <p class="text-blue-300 text-sm md:text-base opacity-90 tracking-wide mt-2 font-sans">သာသနာရေးဦးစီးဌာနမှ ထုတ်ပြန်သော အောင်စာရင်းများ</p>
+                <p class="text-blue-300 text-sm md:text-base opacity-90 tracking-wide mt-2 font-sans">(ဤဝဘ်ဆိုဒ်သည် ဇွန်လ ၅ ရက်၊ မနက်လွန်မှ အသက်ဝင်ပါမည်)</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 border-b border-white/10 pb-8">
-                <button type="button" id="btnSpecialPass" class="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-600/20 to-orange-600/20 border border-amber-500/30 hover:bg-amber-600/30 text-amber-300 py-3 px-4 rounded-2xl transition-all duration-300 shadow-[0_0_15px_rgba(217,119,6,0.15)] backdrop-blur-md">
+                <button type="button" id="btnSpecialPass" class="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-600/20 to-orange-600/20 border border-amber-500/30 hover:bg-amber-600/30 text-amber-300 py-3 px-4 rounded-2xl transition-all duration-300 shadow-[0_0_15px_rgba(217,119,6,0.15)] backdrop-blur-md font-sans">
                     <span class="text-xl">🏆</span> အထူးအောင် (၄) ပါး စာရင်း
                 </button>
-                <button type="button" id="btnHonorsPass" class="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 border border-emerald-500/30 hover:bg-emerald-600/30 text-emerald-300 py-3 px-4 rounded-2xl transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.15)] backdrop-blur-md">
+                <button type="button" id="btnHonorsPass" class="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 border border-emerald-500/30 hover:bg-emerald-600/30 text-emerald-300 py-3 px-4 rounded-2xl transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.15)] backdrop-blur-md font-sans">
                     <span class="text-xl">⭐</span> ပါဠိ/မြန်မာ ဂုဏ်ထူးအောင် စာရင်း
                 </button>
             </div>
 
             <form class="space-y-6" id="searchForm">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative font-sans">
                     
                     <div class="custom-select-container relative" data-target="stateSelect">
                         <label class="block text-white/80 text-sm md:text-base mb-2 tracking-wide">တိုင်းဒေသကြီး / ပြည်နယ်</label>
@@ -247,7 +245,7 @@
                     </div>
                 </div>
 
-                <button type="button" id="searchBtn" class="w-full mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-lg rounded-2xl px-4 py-4 transition-all duration-300 shadow-[0_0_20px_rgba(79,70,229,0.4)] hover:shadow-[0_0_30px_rgba(79,70,229,0.6)] border border-blue-400/20 tracking-wider backdrop-blur-md">
+                <button type="button" id="searchBtn" class="w-full mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-lg rounded-2xl px-4 py-4 transition-all duration-300 shadow-[0_0_20px_rgba(79,70,229,0.4)] hover:shadow-[0_0_30px_rgba(79,70,229,0.6)] border border-blue-400/20 tracking-wider backdrop-blur-md font-sans font-bold">
                     ရှာဖွေမည်
                 </button>
             </form>
@@ -284,10 +282,8 @@
     </div>
 
     <script>
-        // Custom Dropdown Logic
         document.addEventListener('DOMContentLoaded', () => {
             const selectContainers = document.querySelectorAll('.custom-select-container');
-
             selectContainers.forEach(container => {
                 const trigger = container.querySelector('.select-trigger');
                 const optionsPanel = container.querySelector('.select-options');
@@ -296,21 +292,15 @@
                 const hiddenInput = container.querySelector('input[type="hidden"]');
                 const options = container.querySelectorAll('.select-option');
 
-                // Click trigger to toggle
                 trigger.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    // Close other open dropdowns first
                     document.querySelectorAll('.select-options').forEach(opt => {
-                        if (opt !== optionsPanel) {
-                            opt.classList.add('hidden');
-                            opt.classList.remove('animate-dropdown');
-                        }
+                        if (opt !== optionsPanel) { opt.classList.add('hidden'); opt.classList.remove('animate-dropdown'); }
                     });
                     document.querySelectorAll('.arrow-icon').forEach(arr => {
                         if (arr !== arrow) arr.style.transform = 'rotate(0deg)';
                     });
 
-                    // Toggle current
                     if (optionsPanel.classList.contains('hidden')) {
                         optionsPanel.classList.remove('hidden');
                         optionsPanel.classList.add('animate-dropdown');
@@ -322,15 +312,12 @@
                     }
                 });
 
-                // Click option to select
                 options.forEach(option => {
                     option.addEventListener('click', () => {
                         display.textContent = option.textContent;
                         display.classList.remove('text-white/70');
                         display.classList.add('text-white');
                         hiddenInput.value = option.getAttribute('data-value');
-                        
-                        // Close dropdown
                         optionsPanel.classList.add('hidden');
                         optionsPanel.classList.remove('animate-dropdown');
                         arrow.style.transform = 'rotate(0deg)';
@@ -338,19 +325,13 @@
                 });
             });
 
-            // Close dropdowns when clicking outside
             document.addEventListener('click', () => {
-                document.querySelectorAll('.select-options').forEach(opt => {
-                    opt.classList.add('hidden');
-                    opt.classList.remove('animate-dropdown');
-                });
-                document.querySelectorAll('.arrow-icon').forEach(arr => {
-                    arr.style.transform = 'rotate(0deg)';
-                });
+                document.querySelectorAll('.select-options').forEach(opt => { opt.classList.add('hidden'); opt.classList.remove('animate-dropdown'); });
+                document.querySelectorAll('.arrow-icon').forEach(arr => { arr.style.transform = 'rotate(0deg)'; });
             });
         });
 
-        // ဓာတ်ပုံလေး လျှောဆင်း/ပြန်တက် Animation ထိန်းချုပ်မှု
+        // ဓာတ်ပုံ လျှောဆင်း/ပြန်တက် Animation ထိန်းချုပ်မှု
         const avatarBadge = document.getElementById('authorBadge');
         function showAvatar() {
             avatarBadge.classList.add('swoop-in');
@@ -359,9 +340,7 @@
             avatarBadge.classList.remove('swoop-in');
         }
 
-        // Search Logic
         let driveLinksData = {};
-
         fetch('./data.json')
             .then(response => {
                 if (!response.ok) throw new Error("JSON ဖိုင်ကို ရှာမတွေ့ပါ။");
@@ -370,7 +349,6 @@
             .then(data => driveLinksData = data)
             .catch(error => console.error("Error:", error));
 
-        // Shared function to show alert and open link
         function triggerLinkOpen(targetUrl) {
             if (targetUrl && targetUrl.trim() !== "") {
                 Swal.fire({
@@ -400,7 +378,6 @@
             }
         }
 
-        // Search Button Logic
         document.getElementById('searchBtn').addEventListener('click', function() {
             const state = document.getElementById('stateSelect').value;
             const level = document.getElementById('levelSelect').value;
@@ -435,21 +412,16 @@
             }
         });
 
-        // Special Passes Buttons Logic
         document.getElementById('btnSpecialPass').addEventListener('click', function() {
             if (driveLinksData["အထူးစာရင်းများ"] && driveLinksData["အထူးစာရင်းများ"]["အထူးအောင်"]) {
                 triggerLinkOpen(driveLinksData["အထူးစာရင်းများ"]["အထူးအောင်"]);
-            } else {
-                triggerLinkOpen(""); // triggers "Coming soon"
-            }
+            } else { triggerLinkOpen(""); }
         });
 
         document.getElementById('btnHonorsPass').addEventListener('click', function() {
             if (driveLinksData["အထူးစာရင်းများ"] && driveLinksData["အထူးစာရင်းများ"]["ဂုဏ်ထူးအောင်"]) {
                 triggerLinkOpen(driveLinksData["အထူးစာရင်းများ"]["ဂုဏ်ထူးအောင်"]);
-            } else {
-                triggerLinkOpen(""); // triggers "Coming soon"
-            }
+            } else { triggerLinkOpen(""); }
         });
     </script>
 </body>
