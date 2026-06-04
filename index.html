@@ -141,10 +141,10 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 border-b border-white/10 pb-8">
-                <button onclick="window.open('LINK_FOR_SPECIAL_PASS', '_blank')" class="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-600/20 to-orange-600/20 border border-amber-500/30 hover:bg-amber-600/30 text-amber-300 py-3 px-4 rounded-2xl transition-all duration-300 shadow-[0_0_15px_rgba(217,119,6,0.15)] backdrop-blur-md">
+                <button type="button" id="btnSpecialPass" class="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-600/20 to-orange-600/20 border border-amber-500/30 hover:bg-amber-600/30 text-amber-300 py-3 px-4 rounded-2xl transition-all duration-300 shadow-[0_0_15px_rgba(217,119,6,0.15)] backdrop-blur-md">
                     <span class="text-xl">🏆</span> အထူးအောင် (၄) ပါး စာရင်း
                 </button>
-                <button onclick="window.open('LINK_FOR_HONORS_PASS', '_blank')" class="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 border border-emerald-500/30 hover:bg-emerald-600/30 text-emerald-300 py-3 px-4 rounded-2xl transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.15)] backdrop-blur-md">
+                <button type="button" id="btnHonorsPass" class="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 border border-emerald-500/30 hover:bg-emerald-600/30 text-emerald-300 py-3 px-4 rounded-2xl transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.15)] backdrop-blur-md">
                     <span class="text-xl">⭐</span> ပါဠိ/မြန်မာ ဂုဏ်ထူးအောင် စာရင်း
                 </button>
             </div>
@@ -313,6 +313,33 @@
             .then(data => driveLinksData = data)
             .catch(error => console.error("Error:", error));
 
+        // Shared function to show alert and open link
+        function triggerLinkOpen(targetUrl) {
+            if (targetUrl && targetUrl.trim() !== "") {
+                Swal.fire({
+                    title: 'ရှာဖွေနေပါသည်...',
+                    html: 'Google Drive သို့ ခေါ်ဆောင်သွားပါမည်<br><br><div class="animate-pulse flex justify-center"><div class="w-12 h-12 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div></div>',
+                    icon: 'success',
+                    timer: 2000,
+                    showConfirmButton: false,
+                    background: 'transparent',
+                    customClass: { popup: 'glass-swal' }
+                }).then(() => {
+                    window.open(targetUrl, '_blank');
+                });
+            } else {
+                Swal.fire({
+                    icon: 'info',
+                    title: 'မကြာမီ လာမည်',
+                    text: 'လင့်ခ် မရရှိသေးပါ။',
+                    background: 'transparent',
+                    customClass: { popup: 'glass-swal' },
+                    confirmButtonColor: '#4f46e5'
+                });
+            }
+        }
+
+        // Search Button Logic
         document.getElementById('searchBtn').addEventListener('click', function() {
             const state = document.getElementById('stateSelect').value;
             const level = document.getElementById('levelSelect').value;
@@ -330,30 +357,7 @@
             }
 
             if (driveLinksData[state] && driveLinksData[state][level]) {
-                const targetUrl = driveLinksData[state][level];
-                
-                if (targetUrl.trim() !== "") {
-                    Swal.fire({
-                        title: 'ရှာဖွေနေပါသည်...',
-                        html: 'Google Drive သို့ ခေါ်ဆောင်သွားပါမည်<br><br><div class="animate-pulse flex justify-center"><div class="w-12 h-12 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div></div>',
-                        icon: 'success',
-                        timer: 2000,
-                        showConfirmButton: false,
-                        background: 'transparent',
-                        customClass: { popup: 'glass-swal' }
-                    }).then(() => {
-                        window.open(targetUrl, '_blank');
-                    });
-                } else {
-                    Swal.fire({
-                        icon: 'info',
-                        title: 'မကြာမီ လာမည်',
-                        text: 'လင့်ခ် မရရှိသေးပါ။',
-                        background: 'transparent',
-                        customClass: { popup: 'glass-swal' },
-                        confirmButtonColor: '#4f46e5'
-                    });
-                }
+                triggerLinkOpen(driveLinksData[state][level]);
             } else {
                 Swal.fire({
                     icon: 'info',
@@ -363,6 +367,23 @@
                     customClass: { popup: 'glass-swal' },
                     confirmButtonColor: '#4f46e5'
                 });
+            }
+        });
+
+        // Special Passes Buttons Logic
+        document.getElementById('btnSpecialPass').addEventListener('click', function() {
+            if (driveLinksData["အထူးစာရင်းများ"] && driveLinksData["အထူးစာရင်းများ"]["အထူးအောင်"]) {
+                triggerLinkOpen(driveLinksData["အထူးစာရင်းများ"]["အထူးအောင်"]);
+            } else {
+                triggerLinkOpen(""); // triggers "Coming soon"
+            }
+        });
+
+        document.getElementById('btnHonorsPass').addEventListener('click', function() {
+            if (driveLinksData["အထူးစာရင်းများ"] && driveLinksData["အထူးစာရင်းများ"]["ဂုဏ်ထူးအောင်"]) {
+                triggerLinkOpen(driveLinksData["အထူးစာရင်းများ"]["ဂုဏ်ထူးအောင်"]);
+            } else {
+                triggerLinkOpen(""); // triggers "Coming soon"
             }
         });
     </script>
