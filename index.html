@@ -41,6 +41,7 @@
         }
         
         .title-font { font-family: 'Aka02', sans-serif; }
+        .ui-font { font-family: 'Handwriting', sans-serif; } /* ခလုတ်များနှင့် Drop-down များကို Handwriting သို့ ပြောင်းထားပါသည် */
         .signature-font { font-family: 'Handwriting', cursive; }
 
         /* OS Style Advanced Glassmorphism */
@@ -62,7 +63,7 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.1) !important;
         }
         .swal2-title { color: #ffffff !important; font-family: 'Aka02', sans-serif !important; }
-        .swal2-html-container { color: #cbd5e1 !important; font-family: 'Aka011', sans-serif !important; }
+        .swal2-html-container { color: #cbd5e1 !important; font-family: 'Handwriting', sans-serif !important; }
 
         /* Custom Dropdown Animations & Scrollbar */
         @keyframes slideDown {
@@ -166,7 +167,6 @@
 
     <div id="authorBadge">
         <div class="relative w-40 h-40 md:w-56 md:h-56 flex items-center justify-center">
-            
             <div class="airplane-contrail"></div>
             <div class="airplane-contrail" style="animation-delay: 0.3s;"></div>
             <div class="airplane-contrail" style="animation-delay: 0.6s;"></div>
@@ -182,21 +182,21 @@
                 <h1 class="title-font text-3xl md:text-5xl font-bold gold-flow-text mb-4 tracking-wide drop-shadow-[0_2px_15px_rgba(255,255,255,0.3)] leading-[1.6]">
                     ၁၃၈၇ (၂၀၂၆) ဓမ္မာစရိယအောင်စာရင်း
                 </h1>
-                <p class="text-blue-300 text-sm md:text-base opacity-90 tracking-wide mt-2 font-sans">သာသနာရေးဦးစီးဌာနမှ ထုတ်ပြန်သော အောင်စာရင်းများ</p>
-                <p class="text-blue-300 text-sm md:text-base opacity-90 tracking-wide mt-2 font-sans">(ဤဝဘ်ဆိုဒ်သည် ဇွန်လ ၅ ရက်၊ မနက်လွန်မှ အသက်ဝင်ပါမည်)</p>
+                <p class="text-blue-300 text-sm md:text-base md:text-xl opacity-90 tracking-wide mt-2">သာသနာရေးဦးစီးဌာနမှ ထုတ်ပြန်သော အောင်စာရင်းများ</p>
+                <p class="text-blue-300 text-sm md:text-base md:text-lg opacity-90 tracking-wide mt-2">(ဤဝဘ်ဆိုဒ်သည် ဇွန်လ ၅ ရက်၊ မနက်လွန်မှ အသက်ဝင်ပါမည်)</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 border-b border-white/10 pb-8">
-                <button type="button" id="btnSpecialPass" class="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-600/20 to-orange-600/20 border border-amber-500/30 hover:bg-amber-600/30 text-amber-300 py-3 px-4 rounded-2xl transition-all duration-300 shadow-[0_0_15px_rgba(217,119,6,0.15)] backdrop-blur-md font-sans">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 border-b border-white/10 pb-8 ui-font">
+                <button type="button" id="btnSpecialPass" class="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-600/20 to-orange-600/20 border border-amber-500/30 hover:bg-amber-600/30 text-amber-300 py-3 px-4 rounded-2xl transition-all duration-300 shadow-[0_0_15px_rgba(217,119,6,0.15)] backdrop-blur-md">
                     <span class="text-xl">🏆</span> အထူးအောင် (၄) ပါး စာရင်း
                 </button>
-                <button type="button" id="btnHonorsPass" class="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 border border-emerald-500/30 hover:bg-emerald-600/30 text-emerald-300 py-3 px-4 rounded-2xl transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.15)] backdrop-blur-md font-sans">
+                <button type="button" id="btnHonorsPass" class="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 border border-emerald-500/30 hover:bg-emerald-600/30 text-emerald-300 py-3 px-4 rounded-2xl transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.15)] backdrop-blur-md">
                     <span class="text-xl">⭐</span> ပါဠိ/မြန်မာ ဂုဏ်ထူးအောင် စာရင်း
                 </button>
             </div>
 
-            <form class="space-y-6" id="searchForm">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative font-sans">
+            <form class="space-y-6 ui-font" id="searchForm">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
                     
                     <div class="custom-select-container relative" data-target="stateSelect">
                         <label class="block text-white/80 text-sm md:text-base mb-2 tracking-wide">တိုင်းဒေသကြီး / ပြည်နယ်</label>
@@ -245,7 +245,7 @@
                     </div>
                 </div>
 
-                <button type="button" id="searchBtn" class="w-full mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-lg rounded-2xl px-4 py-4 transition-all duration-300 shadow-[0_0_20px_rgba(79,70,229,0.4)] hover:shadow-[0_0_30px_rgba(79,70,229,0.6)] border border-blue-400/20 tracking-wider backdrop-blur-md font-sans font-bold">
+                <button type="button" id="searchBtn" class="w-full mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-lg rounded-2xl px-4 py-4 transition-all duration-300 shadow-[0_0_20px_rgba(79,70,229,0.4)] hover:shadow-[0_0_30px_rgba(79,70,229,0.6)] border border-blue-400/20 tracking-wider backdrop-blur-md font-bold">
                     ရှာဖွေမည်
                 </button>
             </form>
@@ -259,7 +259,7 @@
                             <span class="signature-font inline-block pb-2 pt-1 leading-loose font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-200 to-indigo-300 text-2xl md:text-3xl tracking-widest drop-shadow-md">
                                 ဘုန်းသန္တိ
                             </span>
-                            <span class="text-sm tracking-widest uppercase opacity-70 mt-1 font-sans">ဖန်တီးသည်</span>
+                            <span class="text-sm tracking-widest uppercase opacity-70 mt-1">ဖန်တီးသည်</span>
                         </p>
                         <span class="text-yellow-400 text-xl animate-pulse">✦</span>
                     </div>
@@ -268,22 +268,24 @@
         </div>
     </div>
 
-    <div class="marquee-container py-3 backdrop-blur-md z-20 relative font-sans">
+    <div class="marquee-container py-3 backdrop-blur-md z-20 relative">
         <div class="marquee-content flex items-center gap-12">
             <div class="flex items-center gap-3">
                 <img src="https://via.placeholder.com/40" alt="Sponsor Logo" class="w-8 h-8 rounded-full border border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                <span class="text-white/80 text-sm md:text-base tracking-wide">ဤဝဘ်ဆိုဒ်ဖြစ်မြောက်ရန် <span class="title-font text-yellow-400 text-lg">ရွှေဒေါင်းယဉ်သင်္ကန်းတိုက် မိသားစု မုံရွာ 09-2130783</span> မှ ဓမ္မဒါန ကုသိုလ်ပြု ပံ့ပိုးလှူဒါန်းပါသည်။</span>
+                <span class="text-white/80 text-sm md:text-base md:text-xl tracking-wide">ဤဝဘ်ဆိုဒ်ဖြစ်မြောက်ရန် <span class="title-font text-yellow-400 text-lg md:text-2xl">ရွှေဒေါင်းယဉ်သင်္ကန်းတိုက် မိသားစု မုံရွာ 09-2130783</span> မှ ဓမ္မဒါန ကုသိုလ်ပြု ပံ့ပိုးလှူဒါန်းပါသည်။</span>
             </div>
             <div class="flex items-center gap-3">
                 <img src="https://via.placeholder.com/40" alt="Sponsor Logo" class="w-8 h-8 rounded-full border border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                <span class="text-white/80 text-sm md:text-base tracking-wide">ဤဝဘ်ဆိုဒ်ဖြစ်မြောက်ရန် <span class="title-font text-yellow-400 text-lg">ရွှေဒေါင်းယဉ်သင်္ကန်းတိုက် မိသားစု မုံရွာ 09-2130783</span> မှ ဓမ္မဒါန ကုသိုလ်ပြု ပံ့ပိုးလှူဒါန်းပါသည်။</span>
+                <span class="text-white/80 text-sm md:text-base md:text-xl tracking-wide">ဤဝဘ်ဆိုဒ်ဖြစ်မြောက်ရန် <span class="title-font text-yellow-400 text-lg md:text-2xl">ရွှေဒေါင်းယဉ်သင်္ကန်းတိုက် မိသားစု မုံရွာ 09-2130783</span> မှ ဓမ္မဒါန ကုသိုလ်ပြု ပံ့ပိုးလှူဒါန်းပါသည်။</span>
             </div>
         </div>
     </div>
 
     <script>
+        // Custom Dropdown Logic
         document.addEventListener('DOMContentLoaded', () => {
             const selectContainers = document.querySelectorAll('.custom-select-container');
+
             selectContainers.forEach(container => {
                 const trigger = container.querySelector('.select-trigger');
                 const optionsPanel = container.querySelector('.select-options');
@@ -295,7 +297,10 @@
                 trigger.addEventListener('click', (e) => {
                     e.stopPropagation();
                     document.querySelectorAll('.select-options').forEach(opt => {
-                        if (opt !== optionsPanel) { opt.classList.add('hidden'); opt.classList.remove('animate-dropdown'); }
+                        if (opt !== optionsPanel) {
+                            opt.classList.add('hidden');
+                            opt.classList.remove('animate-dropdown');
+                        }
                     });
                     document.querySelectorAll('.arrow-icon').forEach(arr => {
                         if (arr !== arrow) arr.style.transform = 'rotate(0deg)';
@@ -318,6 +323,7 @@
                         display.classList.remove('text-white/70');
                         display.classList.add('text-white');
                         hiddenInput.value = option.getAttribute('data-value');
+                        
                         optionsPanel.classList.add('hidden');
                         optionsPanel.classList.remove('animate-dropdown');
                         arrow.style.transform = 'rotate(0deg)';
@@ -326,8 +332,13 @@
             });
 
             document.addEventListener('click', () => {
-                document.querySelectorAll('.select-options').forEach(opt => { opt.classList.add('hidden'); opt.classList.remove('animate-dropdown'); });
-                document.querySelectorAll('.arrow-icon').forEach(arr => { arr.style.transform = 'rotate(0deg)'; });
+                document.querySelectorAll('.select-options').forEach(opt => {
+                    opt.classList.add('hidden');
+                    opt.classList.remove('animate-dropdown');
+                });
+                document.querySelectorAll('.arrow-icon').forEach(arr => {
+                    arr.style.transform = 'rotate(0deg)';
+                });
             });
         });
 
