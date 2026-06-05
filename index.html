@@ -156,8 +156,7 @@
             animation: contrailBlast 0.9s infinite ease-out;
         }
     </style>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YR2LEE00VR"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YR2LEE00VR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -272,8 +271,8 @@
         </div>
     </div>
 
-    <a href="https://m.me/451970027989800?hash=null&source=qr" target="_blank" class="fixed bottom-24 right-4 md:bottom-8 md:right-8 z-[100] flex items-center gap-2 bg-gradient-to-r from-rose-600/20 to-pink-600/20 hover:from-rose-500/40 hover:to-pink-500/40 border border-rose-500/30 text-rose-200 py-2.5 px-5 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(225,29,72,0.2)] backdrop-blur-md ui-font hover:scale-105 hover:shadow-[0_0_25px_rgba(225,29,72,0.4)]">
-        <span class="text-xl drop-shadow-md">💬</span> <span class="tracking-wide">စာရင်းအမှားရှိလျှင် ထောက်ပြရန် (VPN ဖွင့်၍ ဝင်ပါ) </span>
+    <a href="https://m.me/451970027989800?hash=null&source=qr" target="_blank" onclick="if(typeof gtag === 'function') gtag('event', 'messenger_click', {'event_category': 'Contact', 'event_label': 'Error Report'});" class="fixed bottom-24 right-4 md:bottom-8 md:right-8 z-[100] flex items-center gap-2 bg-gradient-to-r from-rose-600/20 to-pink-600/20 hover:from-rose-500/40 hover:to-pink-500/40 border border-rose-500/30 text-rose-200 py-2.5 px-5 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(225,29,72,0.2)] backdrop-blur-md ui-font hover:scale-105 hover:shadow-[0_0_25px_rgba(225,29,72,0.4)]">
+        <span class="text-xl drop-shadow-md">💬</span> <span class="tracking-wide">စာရင်းအမှားရှိလျှင် ထောက်ပြရန် (VPN ဖွင့်၍ ဝင်ပါ) </span>
     </a>
 
     <div class="marquee-container py-3 backdrop-blur-md z-20 relative fixed bottom-0">
@@ -412,6 +411,12 @@
             }
 
             if (driveLinksData[state] && driveLinksData[state][level]) {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'search_result_click', {
+                        'search_state': state,
+                        'search_level': level
+                    });
+                }
                 triggerLinkOpen(driveLinksData[state][level]);
             } else {
                 Swal.fire({
@@ -429,12 +434,24 @@
 
         document.getElementById('btnSpecialPass').addEventListener('click', function() {
             if (driveLinksData["အထူးစာရင်းများ"] && driveLinksData["အထူးစာရင်းများ"]["အထူးအောင်"]) {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'search_result_click', {
+                        'search_state': 'အထူးစာရင်းများ',
+                        'search_level': 'အထူးအောင်'
+                    });
+                }
                 triggerLinkOpen(driveLinksData["အထူးစာရင်းများ"]["အထူးအောင်"]);
             } else { triggerLinkOpen(""); }
         });
 
         document.getElementById('btnHonorsPass').addEventListener('click', function() {
             if (driveLinksData["အထူးစာရင်းများ"] && driveLinksData["အထူးစာရင်းများ"]["ဂုဏ်ထူးအောင်"]) {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'search_result_click', {
+                        'search_state': 'အထူးစာရင်းများ',
+                        'search_level': 'ဂုဏ်ထူးအောင်'
+                    });
+                }
                 triggerLinkOpen(driveLinksData["အထူးစာရင်းများ"]["ဂုဏ်ထူးအောင်"]);
             } else { triggerLinkOpen(""); }
         });
