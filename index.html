@@ -25,7 +25,6 @@
             font-display: swap;
         }
 
-        /* နောက်ခံကာလာ နှင့် Default Font ပြင်ဆင်ပြီး */
         body { 
             font-family: 'Handwriting', sans-serif; 
             background: linear-gradient(135deg, #000000 0%, #081229 50%, #000000 100%);
@@ -41,10 +40,9 @@
         }
         
         .title-font { font-family: 'Aka02', sans-serif; }
-        .ui-font { font-family: 'Handwriting', sans-serif; } /* ခလုတ်များနှင့် Drop-down များကို Handwriting သို့ ပြောင်းထားပါသည် */
+        .ui-font { font-family: 'Handwriting', sans-serif; } 
         .signature-font { font-family: 'Handwriting', cursive; }
 
-        /* OS Style Advanced Glassmorphism */
         .glass-panel {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
             backdrop-filter: blur(20px);
@@ -53,7 +51,6 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
         }
 
-        /* SweetAlert iOS Glass Style */
         .glass-swal {
             background: rgba(15, 23, 42, 0.6) !important;
             backdrop-filter: blur(25px) !important;
@@ -65,7 +62,6 @@
         .swal2-title { color: #ffffff !important; font-family: 'Aka02', sans-serif !important; }
         .swal2-html-container { color: #cbd5e1 !important; font-family: 'Handwriting', sans-serif !important; }
 
-        /* Custom Dropdown Animations & Scrollbar */
         @keyframes slideDown {
             from { opacity: 0; transform: translateY(-10px) scale(0.98); }
             to { opacity: 1; transform: translateY(0) scale(1); }
@@ -75,13 +71,9 @@
         }
         .ios-scrollbar::-webkit-scrollbar { width: 6px; }
         .ios-scrollbar::-webkit-scrollbar-track { background: transparent; }
-        .ios-scrollbar::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-        }
+        .ios-scrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 10px; }
         .ios-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.3); }
 
-        /* Animated Liquid Background */
         .blob-1 { animation: float 15s ease-in-out infinite; }
         .blob-2 { animation: float 18s ease-in-out infinite reverse; }
         
@@ -92,7 +84,6 @@
             100% { transform: translate(0, 0) scale(1); }
         }
 
-        /* Marquee Animation */
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
@@ -100,25 +91,14 @@
             border-top: 1px solid rgba(255,255,255,0.05);
             background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.8) 100%);
         }
-        .marquee-content {
-            display: inline-block;
-            animation: marquee 20s linear infinite;
-        }
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
+        .marquee-content { display: inline-block; animation: marquee 20s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
         
-        @keyframes goldShimmer {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
+        @keyframes goldShimmer { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
         .gold-flow-text {
             background: linear-gradient(to right, #fde047 0%, #d97706 25%, #fef08a 50%, #d97706 75%, #fde047 100%);
-            background-size: 200% auto;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
+            background-size: 200% auto; color: transparent;
+            -webkit-background-clip: text; background-clip: text;
             animation: goldShimmer 4s linear infinite;
         }
 
@@ -170,7 +150,6 @@
             <div class="airplane-contrail"></div>
             <div class="airplane-contrail" style="animation-delay: 0.3s;"></div>
             <div class="airplane-contrail" style="animation-delay: 0.6s;"></div>
-            
             <img src="./profile.png" alt="Developer" class="w-full h-full object-contain relative z-10 drop-shadow-[0_15px_30px_rgba(255,255,255,0.4)]">
         </div>
     </div>
@@ -205,27 +184,23 @@
                             <svg class="w-5 h-5 text-white/50 transition-transform duration-300 arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </div>
                         <div class="select-options hidden absolute z-50 w-full mt-2 bg-[#081229]/80 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl max-h-60 overflow-y-auto ios-scrollbar">
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ကချင်">ကချင်ပြည်နယ်</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ကယား">ကယားပြည်နယ်</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ကရင်">ကရင်ပြည်နယ်</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ချင်း">ချင်းပြည်နယ်</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="စစ်ကိုင်း">စစ်ကိုင်းတိုင်းဒေသကြီး</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="တနင်္သာရီ">တနင်္သာရီတိုင်းဒေသကြီး</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="နေပြည်တော်">နေပြည်တော်ကောင်စီ</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ပဲခူး (အရှေ့ပိုင်း)">ပဲခူးတိုင်းဒေသကြီး (အရှေ့ပိုင်း)</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ပဲခူး (အနောက်ပိုင်း)">ပဲခူးတိုင်းဒေသကြီး (အနောက်ပိုင်း)</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="မကွေး">မကွေးတိုင်းဒေသကြီး</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="မန္တလေး">မန္တလေးတိုင်းဒေသကြီး</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="မွန်">မွန်ပြည်နယ်</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ရခိုင်">ရခိုင်ပြည်နယ်</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ရန်ကုန် (အရှေ့ပိုင်း)">ရန်ကုန်တိုင်းဒေသကြီး (အရှေ့ပိုင်း)</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ရန်ကုန် (အနောက်ပိုင်း)">ရန်ကုန်တိုင်းဒေသကြီး (အနောက်ပိုင်း)</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ရန်ကုန် (တောင်ပိုင်း)">ရန်ကုန်တိုင်းဒေသကြီး (တောင်ပိုင်း)</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ရန်ကုန် (မြောက်ပိုင်း)">ရန်ကုန်တိုင်းဒေသကြီး (မြောက်ပိုင်း)</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ရှမ်း (အရှေ့ပိုင်း)">ရှမ်းပြည်နယ် (အရှေ့ပိုင်း)</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ရှမ်း (တောင်ပိုင်း)">ရှမ်းပြည်နယ် (တောင်ပိုင်း)</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ရှမ်း (မြောက်ပိုင်း)">ရှမ်းပြည်နယ် (မြောက်ပိုင်း)</div>
-                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer transition-colors" data-value="ဧရာဝတီ">ဧရာဝတီတိုင်းဒေသကြီး</div>
+                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ကချင်ပြည်နယ်">ကချင်ပြည်နယ်</div>
+                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ကယားပြည်နယ်">ကယားပြည်နယ်</div>
+                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ကရင်ပြည်နယ်">ကရင်ပြည်နယ်</div>
+                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="စစ်ကိုင်းတိုင်း">စစ်ကိုင်းတိုင်းဒေသကြီး</div>
+                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="တနင်္သာရီတိုင်း">တနင်္သာရီတိုင်းဒေသကြီး</div>
+                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="နေပြည်တော်ကောင်စီ">နေပြည်တော်ကောင်စီ</div>
+                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ပဲခူးတိုင်း(အနောက်)">ပဲခူးတိုင်း (အနောက်)</div>
+                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ပဲခူးတိုင်း(အရှေ့)">ပဲခူးတိုင်း (အရှေ့)</div>
+                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="မကွေးတိုင်း">မကွေးတိုင်းဒေသကြီး</div>
+                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="မန္တလေးတိုင်း">မန္တလေးတိုင်းဒေသကြီး</div>
+                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="မွန်ပြည်နယ်">မွန်ပြည်နယ်</div>
+                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ရခိုင်ပြည်နယ်">ရခိုင်ပြည်နယ်</div>
+                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ရန်ကုန်တိုင်း">ရန်ကုန်တိုင်းဒေသကြီး</div>
+                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ရှမ်းပြည်နယ်(တောင်)">ရှမ်းပြည်နယ် (တောင်)</div>
+                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ရှမ်းပြည်နယ်(မြောက်)">ရှမ်းပြည်နယ် (မြောက်)</div>
+                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer border-b border-white/5 transition-colors" data-value="ရှမ်းပြည်နယ်(အရှေ့)">ရှမ်းပြည်နယ် (အရှေ့)</div>
+                            <div class="select-option px-5 py-3 hover:bg-blue-600/30 cursor-pointer transition-colors" data-value="ဧရာဝတီတိုင်း">ဧရာဝတီတိုင်းဒေသကြီး</div>
                         </div>
                         <input type="hidden" id="stateSelect" value="">
                     </div>
@@ -243,6 +218,11 @@
                         </div>
                         <input type="hidden" id="levelSelect" value="">
                     </div>
+                </div>
+
+                <div class="mt-2">
+                    <label class="block text-white/80 text-sm md:text-base mb-2 tracking-wide">အမည် (သို့) ခုံအမှတ် (အလွယ်တကူ ရှာဖွေရန်)</label>
+                    <input type="text" id="nameInput" placeholder="ဥပမာ - အရှင်သီဝလိ သို့မဟုတ် ၁၂၃၄" class="w-full bg-white/5 border border-white/10 text-white rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-500/50 transition-all shadow-inner backdrop-blur-md placeholder-white/30 tracking-wide">
                 </div>
 
                 <button type="button" id="searchBtn" class="w-full mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-lg rounded-2xl px-4 py-4 transition-all duration-300 shadow-[0_0_20px_rgba(79,70,229,0.4)] hover:shadow-[0_0_30px_rgba(79,70,229,0.6)] border border-blue-400/20 tracking-wider backdrop-blur-md font-bold">
@@ -282,7 +262,6 @@
     </div>
 
     <script>
-        // Custom Dropdown Logic
         document.addEventListener('DOMContentLoaded', () => {
             const selectContainers = document.querySelectorAll('.custom-select-container');
 
@@ -342,14 +321,10 @@
             });
         });
 
-        // ဓာတ်ပုံ လျှောဆင်း/ပြန်တက် Animation ထိန်းချုပ်မှု
+        // ဓာတ်ပုံ လျှောဆင်း/ပြန်တက် Animation
         const avatarBadge = document.getElementById('authorBadge');
-        function showAvatar() {
-            avatarBadge.classList.add('swoop-in');
-        }
-        function hideAvatar() {
-            avatarBadge.classList.remove('swoop-in');
-        }
+        function showAvatar() { avatarBadge.classList.add('swoop-in'); }
+        function hideAvatar() { avatarBadge.classList.remove('swoop-in'); }
 
         let driveLinksData = {};
         fetch('./data.json')
@@ -360,13 +335,20 @@
             .then(data => driveLinksData = data)
             .catch(error => console.error("Error:", error));
 
-        function triggerLinkOpen(targetUrl) {
+        function triggerLinkOpen(targetUrl, searchName = "") {
             if (targetUrl && targetUrl.trim() !== "") {
+                let alertHtml = 'Google Drive သို့ ခေါ်ဆောင်သွားပါမည်<br><br><div class="animate-pulse flex justify-center"><div class="w-12 h-12 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div></div>';
+                
+                if (searchName) {
+                    navigator.clipboard.writeText(searchName).catch(err => console.log('Copy မရပါ', err));
+                    alertHtml = `<span class="text-yellow-400 font-bold font-sans">${searchName}</span> ကို Copy ကူးထားပြီးပါပြီ။<br><span class="text-sm">Drive ထဲရောက်လျှင် မှန်ဘီလူး (🔍) တွင် Paste ချ၍ ရှာပါ။</span><br><br><div class="animate-pulse flex justify-center"><div class="w-12 h-12 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div></div>`;
+                }
+
                 Swal.fire({
                     title: 'ရှာဖွေနေပါသည်...',
-                    html: 'Google Drive သို့ ခေါ်ဆောင်သွားပါမည်<br><br><div class="animate-pulse flex justify-center"><div class="w-12 h-12 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div></div>',
+                    html: alertHtml,
                     icon: 'success',
-                    timer: 2000,
+                    timer: searchName ? 3000 : 2000,
                     showConfirmButton: false,
                     background: 'transparent',
                     customClass: { popup: 'glass-swal' },
@@ -392,6 +374,7 @@
         document.getElementById('searchBtn').addEventListener('click', function() {
             const state = document.getElementById('stateSelect').value;
             const level = document.getElementById('levelSelect').value;
+            const nameInput = document.getElementById('nameInput') ? document.getElementById('nameInput').value.trim() : "";
 
             if (!state || !level) {
                 Swal.fire({
@@ -408,7 +391,7 @@
             }
 
             if (driveLinksData[state] && driveLinksData[state][level]) {
-                triggerLinkOpen(driveLinksData[state][level]);
+                triggerLinkOpen(driveLinksData[state][level], nameInput);
             } else {
                 Swal.fire({
                     icon: 'info',
