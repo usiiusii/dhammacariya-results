@@ -25,6 +25,7 @@
             font-display: swap;
         }
 
+        /* နောက်ခံကာလာ နှင့် Default Font ပြင်ဆင်ပြီး */
         body { 
             font-family: 'Handwriting', sans-serif; 
             background: linear-gradient(135deg, #000000 0%, #081229 50%, #000000 100%);
@@ -43,6 +44,7 @@
         .ui-font { font-family: 'Handwriting', sans-serif; } 
         .signature-font { font-family: 'Handwriting', cursive; }
 
+        /* OS Style Advanced Glassmorphism */
         .glass-panel {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
             backdrop-filter: blur(20px);
@@ -51,6 +53,7 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
         }
 
+        /* SweetAlert iOS Glass Style */
         .glass-swal {
             background: rgba(15, 23, 42, 0.6) !important;
             backdrop-filter: blur(25px) !important;
@@ -62,6 +65,7 @@
         .swal2-title { color: #ffffff !important; font-family: 'Aka02', sans-serif !important; }
         .swal2-html-container { color: #cbd5e1 !important; font-family: 'Handwriting', sans-serif !important; }
 
+        /* Custom Dropdown Animations & Scrollbar */
         @keyframes slideDown {
             from { opacity: 0; transform: translateY(-10px) scale(0.98); }
             to { opacity: 1; transform: translateY(0) scale(1); }
@@ -71,9 +75,13 @@
         }
         .ios-scrollbar::-webkit-scrollbar { width: 6px; }
         .ios-scrollbar::-webkit-scrollbar-track { background: transparent; }
-        .ios-scrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 10px; }
+        .ios-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
         .ios-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.3); }
 
+        /* Animated Liquid Background */
         .blob-1 { animation: float 15s ease-in-out infinite; }
         .blob-2 { animation: float 18s ease-in-out infinite reverse; }
         
@@ -84,6 +92,7 @@
             100% { transform: translate(0, 0) scale(1); }
         }
 
+        /* Marquee Animation */
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
@@ -91,14 +100,25 @@
             border-top: 1px solid rgba(255,255,255,0.05);
             background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.8) 100%);
         }
-        .marquee-content { display: inline-block; animation: marquee 20s linear infinite; }
-        @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
         
-        @keyframes goldShimmer { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+        @keyframes goldShimmer {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
         .gold-flow-text {
             background: linear-gradient(to right, #fde047 0%, #d97706 25%, #fef08a 50%, #d97706 75%, #fde047 100%);
-            background-size: 200% auto; color: transparent;
-            -webkit-background-clip: text; background-clip: text;
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
             animation: goldShimmer 4s linear infinite;
         }
 
@@ -167,7 +187,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 border-b border-white/10 pb-8 ui-font">
                 <button type="button" id="btnSpecialPass" class="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-600/20 to-orange-600/20 border border-amber-500/30 hover:bg-amber-600/30 text-amber-300 py-3 px-4 rounded-2xl transition-all duration-300 shadow-[0_0_15px_rgba(217,119,6,0.15)] backdrop-blur-md">
-                    <span class="text-xl">🏆</span> အထူးအောင် (၃) ပါး စာရင်း
+                    <span class="text-xl">🏆</span> အထူးအောင် (၄) ပါး စာရင်း
                 </button>
                 <button type="button" id="btnHonorsPass" class="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 border border-emerald-500/30 hover:bg-emerald-600/30 text-emerald-300 py-3 px-4 rounded-2xl transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.15)] backdrop-blur-md">
                     <span class="text-xl">⭐</span> ပါဠိ/မြန်မာ ဂုဏ်ထူးအောင် စာရင်း
@@ -220,11 +240,6 @@
                     </div>
                 </div>
 
-                <div class="mt-2">
-                    <label class="block text-white/80 text-sm md:text-base mb-2 tracking-wide">အမည် (သို့) ခုံအမှတ် (အလွယ်တကူ ရှာဖွေရန်)</label>
-                    <input type="text" id="nameInput" placeholder="ဥပမာ - ဦးပညာစာရ သို့မဟုတ် ၁၂၃၄" class="w-full bg-white/5 border border-white/10 text-white rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-500/50 transition-all shadow-inner backdrop-blur-md placeholder-white/30 tracking-wide">
-                </div>
-
                 <button type="button" id="searchBtn" class="w-full mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-lg rounded-2xl px-4 py-4 transition-all duration-300 shadow-[0_0_20px_rgba(79,70,229,0.4)] hover:shadow-[0_0_30px_rgba(79,70,229,0.6)] border border-blue-400/20 tracking-wider backdrop-blur-md font-bold">
                     ရှာဖွေမည်
                 </button>
@@ -248,7 +263,11 @@
         </div>
     </div>
 
-    <div class="marquee-container py-3 backdrop-blur-md z-20 relative">
+    <a href="https://m.me/451970027989800?hash=null&source=qr" target="_blank" class="fixed bottom-24 right-4 md:bottom-8 md:right-8 z-[100] flex items-center gap-2 bg-gradient-to-r from-rose-600/20 to-pink-600/20 hover:from-rose-500/40 hover:to-pink-500/40 border border-rose-500/30 text-rose-200 py-2.5 px-5 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(225,29,72,0.2)] backdrop-blur-md ui-font hover:scale-105 hover:shadow-[0_0_25px_rgba(225,29,72,0.4)]">
+        <span class="text-xl drop-shadow-md">💬</span> <span class="tracking-wide">စာရင်းအမှားရှိလျှင် ထောက်ပြရန်</span>
+    </a>
+
+    <div class="marquee-container py-3 backdrop-blur-md z-20 relative fixed bottom-0">
         <div class="marquee-content flex items-center gap-12">
             <div class="flex items-center gap-3">
                 <img src="https://via.placeholder.com/40" alt="Sponsor Logo" class="w-8 h-8 rounded-full border border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.2)]">
@@ -335,20 +354,14 @@
             .then(data => driveLinksData = data)
             .catch(error => console.error("Error:", error));
 
-        function triggerLinkOpen(targetUrl, searchName = "") {
+        // စာသား Auto Copy စနစ်ကို ဖြုတ်လိုက်ပြီး မူလအတိုင်း ပြန်ပြင်ထားပါသည်
+        function triggerLinkOpen(targetUrl) {
             if (targetUrl && targetUrl.trim() !== "") {
-                let alertHtml = 'Google Drive သို့ ခေါ်ဆောင်သွားပါမည်<br><br><div class="animate-pulse flex justify-center"><div class="w-12 h-12 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div></div>';
-                
-                if (searchName) {
-                    navigator.clipboard.writeText(searchName).catch(err => console.log('Copy မရပါ', err));
-                    alertHtml = `<span class="text-yellow-400 font-bold font-sans">${searchName}</span> ကို Copy ကူးထားပြီးပါပြီ။<br><span class="text-sm">Drive ထဲရောက်လျှင် မှန်ဘီလူး (🔍) တွင် Paste ချ၍ ရှာပါ။</span><br><br><div class="animate-pulse flex justify-center"><div class="w-12 h-12 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div></div>`;
-                }
-
                 Swal.fire({
                     title: 'ရှာဖွေနေပါသည်...',
-                    html: alertHtml,
+                    html: 'Google Drive သို့ ခေါ်ဆောင်သွားပါမည်<br><br><div class="animate-pulse flex justify-center"><div class="w-12 h-12 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div></div>',
                     icon: 'success',
-                    timer: searchName ? 3000 : 2000,
+                    timer: 2000,
                     showConfirmButton: false,
                     background: 'transparent',
                     customClass: { popup: 'glass-swal' },
@@ -374,7 +387,6 @@
         document.getElementById('searchBtn').addEventListener('click', function() {
             const state = document.getElementById('stateSelect').value;
             const level = document.getElementById('levelSelect').value;
-            const nameInput = document.getElementById('nameInput') ? document.getElementById('nameInput').value.trim() : "";
 
             if (!state || !level) {
                 Swal.fire({
@@ -391,7 +403,7 @@
             }
 
             if (driveLinksData[state] && driveLinksData[state][level]) {
-                triggerLinkOpen(driveLinksData[state][level], nameInput);
+                triggerLinkOpen(driveLinksData[state][level]);
             } else {
                 Swal.fire({
                     icon: 'info',
