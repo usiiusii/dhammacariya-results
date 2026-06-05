@@ -153,15 +153,14 @@
         </div>
     </div>
 
-    <div class="w-full max-w-3xl px-4 py-10 flex-grow flex flex-col justify-center relative z-10">
+    <div class="w-full max-w-3xl px-4 py-10 flex-grow flex flex-col justify-center relative z-10 pb-24">
         <div class="glass-panel rounded-3xl p-6 md:p-10 relative w-full">
             
             <div class="text-center mb-10">
                 <h1 class="title-font text-3xl md:text-5xl font-bold gold-flow-text mb-4 tracking-wide drop-shadow-[0_2px_15px_rgba(255,255,255,0.3)] leading-[1.6]">
                     ၁၃၈၇ (၂၀၂၆) ဓမ္မာစရိယအောင်စာရင်း
                 </h1>
-                <p class="text-blue-300 text-sm md:text-base md:text-xl opacity-90 tracking-wide mt-2">သာသနာရေးဦးစီးဌာနမှ ထုတ်ပြန်သော အောင်စာရင်းများ</p>
-                <p class="text-blue-300 text-sm md:text-base md:text-lg opacity-90 tracking-wide mt-2">(ဤဝဘ်ဆိုဒ်သည် ဇွန်လ ၅ ရက်၊ မနက်လွန်မှ အသက်ဝင်ပါမည်)</p>
+                <p class="text-blue-300 text-sm md:text-base md:text-xl opacity-90 tracking-wide mt-2">သာသနာရေးဦးစီးဌာနမှ ထုတ်ပြန်သော အောင်စာရင်းများ</p> 
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 ui-font">
@@ -228,7 +227,7 @@
                 </button>
             </form>
 
-            <div class="mt-14 flex justify-center">
+            <div class="mt-14 flex flex-col items-center justify-center gap-5">
                 <div class="relative group cursor-default">
                     <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div class="relative inline-flex items-center gap-3 px-8 py-3 rounded-full bg-[#0B1021]/80 border border-white/10 backdrop-blur-md">
@@ -242,6 +241,10 @@
                         <span class="text-yellow-400 text-xl animate-pulse">✦</span>
                     </div>
                 </div>
+
+                <a href="https://m.me/451970027989800?hash=null&source=qr" target="_blank" onclick="if(typeof gtag === 'function') gtag('event', 'messenger_click', {'event_category': 'Contact', 'event_label': 'Error Report'});" class="inline-flex items-center gap-2 bg-gradient-to-r from-rose-600/20 to-pink-600/20 hover:from-rose-500/40 hover:to-pink-500/40 border border-rose-500/30 text-rose-200 py-2 px-5 rounded-full transition-all duration-300 backdrop-blur-md ui-font text-xs md:text-sm hover:scale-105 shadow-[0_0_10px_rgba(225,29,72,0.1)] hover:shadow-[0_0_20px_rgba(225,29,72,0.3)]">
+                    <span class="text-base md:text-lg drop-shadow-md">💬</span> <span class="tracking-wide">စာရင်းမှားလျှင် ထောက်ပြရန် (VPN ဖွင့်ပြီးဝင်ပါ)</span>
+                </a>
             </div>
         </div>
     </div>
@@ -273,10 +276,6 @@
             </div>
         </div>
     </div>
-
-    <a href="https://m.me/451970027989800?hash=null&source=qr" target="_blank" onclick="if(typeof gtag === 'function') gtag('event', 'messenger_click', {'event_category': 'Contact', 'event_label': 'Error Report'});" class="fixed bottom-24 right-4 md:bottom-8 md:right-8 z-[100] flex items-center gap-2 bg-gradient-to-r from-rose-600/20 to-pink-600/20 hover:from-rose-500/40 hover:to-pink-500/40 border border-rose-500/30 text-rose-200 py-2.5 px-5 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(225,29,72,0.2)] backdrop-blur-md ui-font hover:scale-105 hover:shadow-[0_0_25px_rgba(225,29,72,0.4)]">
-        <span class="text-xl drop-shadow-md">💬</span> <span class="tracking-wide">စာရင်းအမှားရှိလျှင် ထောက်ပြရန် (VPN ဖွင့်၍ ဝင်ပါ) </span>
-    </a>
 
     <div class="marquee-container py-3 backdrop-blur-md z-20 relative fixed bottom-0">
         <div class="marquee-content flex items-center gap-12">
@@ -540,7 +539,7 @@
                     color: '#cbd5e1',
                     interaction: { mode: 'index', intersect: false },
                     plugins: {
-                        legend: { display: false }, // Filter ခလုတ်များဖြင့် အစားထိုးထားသဖြင့် ပိတ်ထားသည်
+                        legend: { display: false },
                         tooltip: {
                             backgroundColor: 'rgba(15, 23, 42, 0.9)',
                             titleFont: { family: 'Aka02', size: 16 },
@@ -566,7 +565,6 @@
             });
         }
 
-        // ဇယားများ တစ်ခုချင်းစီ (သို့) အားလုံးကို Filter လုပ်သည့်စနစ်
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 document.querySelectorAll('.filter-btn').forEach(b => {
@@ -595,7 +593,6 @@
             setTimeout(() => modal.classList.remove('opacity-0'), 10);
             renderChart('bar');
             
-            // Filter များကို မူလအတိုင်း Reset ပြန်လုပ်သည်
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('shadow-[0_0_10px_rgba(255,255,255,0.5)]', 'border-white'));
             document.querySelector('.filter-btn[data-filter="all"]').classList.add('shadow-[0_0_10px_rgba(255,255,255,0.5)]', 'border-white');
 
@@ -613,7 +610,6 @@
             }, 500);
         });
 
-        // မျဉ်း / တိုင် ပုံစံပြောင်းသည့် ခလုတ်များ
         document.querySelectorAll('.chart-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 document.querySelectorAll('.chart-btn').forEach(b => {
@@ -624,7 +620,6 @@
                 if(type === 'bar') e.target.classList.add('shadow-[0_0_15px_rgba(0,255,255,0.3)]');
                 if(type === 'line') e.target.classList.add('shadow-[0_0_15px_rgba(255,0,255,0.3)]');
 
-                // လက်ရှိ Filter အခြေအနေကို မှတ်ထားပြီး Chart ပုံစံပြောင်းသည်
                 const activeFilterBtn = document.querySelector('.filter-btn.border-white');
                 const filterValue = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
                 
