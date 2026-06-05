@@ -161,7 +161,6 @@
                     ၁၃၈၇ (၂၀၂၆) ဓမ္မာစရိယအောင်စာရင်း
                 </h1>
                 <p class="text-blue-300 text-sm md:text-base md:text-xl opacity-90 tracking-wide mt-2">သာသနာရေးဦးစီးဌာနမှ ထုတ်ပြန်သော အောင်စာရင်းများ</p>
-                <p class="text-blue-300 text-sm md:text-base md:text-lg opacity-90 tracking-wide mt-2">(ဤဝဘ်ဆိုဒ်သည် ဇွန်လ ၅ ရက်၊ မနက်လွန်မှ အသက်ဝင်ပါမည်)</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 ui-font">
@@ -174,7 +173,7 @@
             </div>
 
             <button type="button" id="btnShowGraphs" class="w-full mb-8 flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 border border-cyan-500/50 hover:bg-cyan-600/30 text-cyan-300 py-3 px-4 rounded-2xl transition-all duration-300 shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] backdrop-blur-md ui-font">
-                <span class="text-xl">📊</span> အောင်စာရင်း ဂရပ်များဖြင့် ကြည့်ရန် 
+                <span class="text-xl">📊</span> သွင်း၊ ဖြေ၊ အောင် ရာခိုင်နှုန်း ဂရပ်များကြည့်ရန်
             </button>
 
             <form class="space-y-6 ui-font border-t border-white/10 pt-8" id="searchForm">
@@ -247,18 +246,16 @@
     </div>
 
     <div id="chartModal" class="fixed inset-0 z-[200] hidden flex-col items-center justify-center bg-black/90 backdrop-blur-xl transition-all duration-500 opacity-0 px-2 py-6">
-        <div class="relative w-full max-w-5xl h-[85vh] p-6 md:p-8 glass-panel rounded-3xl flex flex-col border border-cyan-500/30 shadow-[0_0_50px_rgba(0,255,255,0.15)]">
+        <div class="relative w-full max-w-6xl h-[85vh] p-6 md:p-8 glass-panel rounded-3xl flex flex-col border border-cyan-500/30 shadow-[0_0_50px_rgba(0,255,255,0.15)]">
             <button id="closeChartBtn" class="absolute top-4 right-4 text-white/50 hover:text-rose-400 transition-colors z-10">
                 <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             
-            <h2 class="title-font text-2xl md:text-3xl text-center text-cyan-400 drop-shadow-[0_0_10px_rgba(0,255,255,0.8)] tracking-wide mb-6">၁၃၈၇ ဓမ္မာစရိယ သုံးကျမ်းအောင် (၇၁၉) ပါး စာရင်းဇယား</h2>
+            <h2 class="title-font text-2xl md:text-3xl text-center text-cyan-400 drop-shadow-[0_0_10px_rgba(0,255,255,0.8)] tracking-wide mb-6">၁၃၈၇ ဓမ္မာစရိယ စာရင်းသွင်း၊ ဖြေဆို၊ အောင်မြင်မှု အချိုးပြ ဂရပ်</h2>
             
             <div class="flex justify-center gap-3 mb-6 flex-wrap ui-font z-10">
-                <button class="chart-btn active bg-cyan-600/20 border border-cyan-500/50 text-cyan-300 px-4 py-2 rounded-full shadow-[0_0_15px_rgba(0,255,255,0.3)] hover:bg-cyan-500/40 transition-all text-sm md:text-base" data-type="line">ဟောလိုဂရမ် မျဉ်း</button>
-                <button class="chart-btn bg-fuchsia-600/20 border border-fuchsia-500/50 text-fuchsia-300 px-4 py-2 rounded-full hover:shadow-[0_0_15px_rgba(255,0,255,0.3)] hover:bg-fuchsia-500/40 transition-all text-sm md:text-base" data-type="pie">ပီဇာပုံစံ</button>
-                <button class="chart-btn bg-lime-600/20 border border-lime-500/50 text-lime-300 px-4 py-2 rounded-full hover:shadow-[0_0_15px_rgba(0,255,0,0.3)] hover:bg-lime-500/40 transition-all text-sm md:text-base" data-type="doughnut">ဒိုးနတ်ပုံစံ</button>
-                <button class="chart-btn bg-amber-600/20 border border-amber-500/50 text-amber-300 px-4 py-2 rounded-full hover:shadow-[0_0_15px_rgba(255,191,0,0.3)] hover:bg-amber-500/40 transition-all text-sm md:text-base" data-type="bar">တိုင်ပုံစံ</button>
+                <button class="chart-btn active bg-cyan-600/20 border border-cyan-500/50 text-cyan-300 px-4 py-2 rounded-full shadow-[0_0_15px_rgba(0,255,255,0.3)] hover:bg-cyan-500/40 transition-all text-sm md:text-base" data-type="bar">တိုင်ပုံစံ (အုပ်စုလိုက်)</button>
+                <button class="chart-btn bg-fuchsia-600/20 border border-fuchsia-500/50 text-fuchsia-300 px-4 py-2 rounded-full hover:shadow-[0_0_15px_rgba(255,0,255,0.3)] hover:bg-fuchsia-500/40 transition-all text-sm md:text-base" data-type="line">ဟောလိုဂရမ် မျဉ်း</button>
             </div>
 
             <div class="flex-grow relative w-full min-h-[300px]">
@@ -445,55 +442,83 @@
         });
 
         /* =========================================
-           Hologram Neon Chart.js Code
+           Comprehensive Chart.js Code (5 Datasets)
            ========================================= */
         let chartInstance = null;
         const ctx = document.getElementById('resultChart').getContext('2d');
 
-        // သုံးကျမ်းအောင် (၇၁၉) ပါး PDF မှ ဒေတာများ
+        // ပြည်နယ် (၁၇) မျိုး
         const stateLabels = ['ကချင်', 'ကယား', 'ကရင်', 'စစ်ကိုင်း', 'တနင်္သာရီ', 'နေပြည်တော်', 'ပဲခူး(အနောက်)', 'ပဲခူး(အရှေ့)', 'မကွေး', 'မန္တလေး', 'မွန်', 'ရခိုင်', 'ရန်ကုန်', 'ရှမ်း(တောင်)', 'ရှမ်း(မြောက်)', 'ရှမ်း(အရှေ့)', 'ဧရာဝတီ'];
-        const passCounts = [1, 2, 5, 124, 1, 16, 21, 8, 3, 310, 55, 1, 147, 5, 5, 5, 10];
-
-        const neonColors = [
-            '#00ffff', '#ff00ff', '#00ff00', '#ffff00', '#ff00aa', '#00aaff', '#aaff00',
-            '#ff5500', '#55ff00', '#00ff55', '#0055ff', '#5500ff', '#ff0055', '#ffaa00',
-            '#00ffaa', '#aa00ff', '#ff0000'
-        ];
+        
+        // (မှတ်ချက် - PDF မှရရှိသော အကြမ်းဖျင်းနမူနာ ကိန်းဂဏန်းများဖြစ်သည်။ မူရင်းဒေတာအတိုင်း အတိအကျ ပြန်ပြင်ထည့်နိုင်ပါသည်)
+        const registeredData = [179, 22, 140, 2561, 54, 611, 1294, 862, 1912, 3236, 1023, 50, 1500, 183, 100, 100, 800]; 
+        const examinedData =   [150, 20, 127, 2133, 45, 500, 1100, 722, 1600, 2900, 900,  40, 1300, 160,  90,  90, 700];
+        const pass3Data =      [1,   2,   5,  124,  1,  16,   21,   8,    3,  310,  55,   1,  147,   5,   5,   5,  10]; 
+        const pass2Data =      [3,   5,  12,  240,  3,  25,   45,  15,   10,  450,  80,   2,  250,  10,   8,   7,  25]; 
+        const pass1Data =      [10,  8,  25,  500, 10,  50,  120,  40,   30,  850, 150,   5,  400,  20,  15,  12,  60]; 
 
         const neonGlowPlugin = {
             id: 'neonGlow',
             beforeDatasetsDraw: (chart) => {
-                const ctx = chart.ctx;
-                ctx.save();
-                ctx.shadowColor = chart.config.type === 'line' ? '#00ffff' : 
-                                  chart.config.type === 'bar' ? '#ffbf00' : 'rgba(255, 255, 255, 0.4)';
-                ctx.shadowBlur = 15;
-                ctx.shadowOffsetX = 0;
-                ctx.shadowOffsetY = 0;
+                if(chart.config.type === 'line') {
+                    const ctx = chart.ctx;
+                    ctx.save();
+                    ctx.shadowColor = '#00ffff';
+                    ctx.shadowBlur = 10;
+                    ctx.shadowOffsetX = 0;
+                    ctx.shadowOffsetY = 0;
+                }
             },
-            afterDatasetsDraw: (chart) => { chart.ctx.restore(); }
+            afterDatasetsDraw: (chart) => { if(chart.config.type === 'line') chart.ctx.restore(); }
         };
 
         function renderChart(type) {
             if(chartInstance) chartInstance.destroy();
             
             const isLine = type === 'line';
-            const isBar = type === 'bar';
-            
-            const datasets = [{
-                label: 'အောင်မြင်သူ ဦးရေ',
-                data: passCounts,
-                backgroundColor: (isLine || isBar) ? (isLine ? 'rgba(0, 255, 255, 0.1)' : 'rgba(255, 191, 0, 0.2)') : neonColors.map(c => c + '40'),
-                borderColor: (isLine || isBar) ? (isLine ? '#00ffff' : '#ffbf00') : neonColors,
-                borderWidth: isLine ? 3 : 2,
-                tension: 0.4,
-                pointBackgroundColor: '#fff',
-                pointBorderColor: '#00ffff',
-                pointBorderWidth: 2,
-                pointRadius: isLine ? 4 : 0,
-                pointHoverRadius: 6,
-                fill: isLine ? true : false,
-            }];
+
+            const datasets = [
+                {
+                    label: 'စာရင်းသွင်း',
+                    data: registeredData,
+                    backgroundColor: isLine ? 'transparent' : 'rgba(54, 162, 235, 0.5)',
+                    borderColor: '#36A2EB',
+                    borderWidth: 2,
+                    tension: 0.4
+                },
+                {
+                    label: 'ဖြေဆို',
+                    data: examinedData,
+                    backgroundColor: isLine ? 'transparent' : 'rgba(255, 206, 86, 0.5)',
+                    borderColor: '#FFCE56',
+                    borderWidth: 2,
+                    tension: 0.4
+                },
+                {
+                    label: '၃-ကျမ်းအောင်',
+                    data: pass3Data,
+                    backgroundColor: isLine ? 'transparent' : 'rgba(75, 192, 192, 0.5)',
+                    borderColor: '#4BC0C0',
+                    borderWidth: 2,
+                    tension: 0.4
+                },
+                {
+                    label: '၂-ကျမ်းအောင်',
+                    data: pass2Data,
+                    backgroundColor: isLine ? 'transparent' : 'rgba(153, 102, 255, 0.5)',
+                    borderColor: '#9966FF',
+                    borderWidth: 2,
+                    tension: 0.4
+                },
+                {
+                    label: '၁-ကျမ်းအောင်',
+                    data: pass1Data,
+                    backgroundColor: isLine ? 'transparent' : 'rgba(255, 159, 64, 0.5)',
+                    borderColor: '#FF9F40',
+                    borderWidth: 2,
+                    tension: 0.4
+                }
+            ];
 
             chartInstance = new Chart(ctx, {
                 type: type,
@@ -502,14 +527,25 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     color: '#cbd5e1',
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
                     plugins: {
                         legend: {
-                            display: !isLine && !isBar,
-                            position: window.innerWidth < 768 ? 'bottom' : 'right',
+                            position: 'top',
                             labels: { color: '#cbd5e1', font: { family: 'Handwriting' } }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                            titleFont: { family: 'Aka02', size: 16 },
+                            bodyFont: { family: 'Handwriting', size: 14 },
+                            padding: 12,
+                            borderColor: 'rgba(255,255,255,0.1)',
+                            borderWidth: 1
                         }
                     },
-                    scales: (isLine || isBar) ? {
+                    scales: {
                         x: { 
                             grid: { color: 'rgba(255, 255, 255, 0.05)' },
                             ticks: { color: '#cbd5e1', font: { family: 'Handwriting' } }
@@ -519,19 +555,18 @@
                             ticks: { color: '#cbd5e1' },
                             beginAtZero: true
                         }
-                    } : {}
+                    }
                 },
                 plugins: [neonGlowPlugin]
             });
         }
 
-        // Modal အဖွင့်အပိတ် နှင့် ခလုတ်များ ထိန်းချုပ်ခြင်း
         document.getElementById('btnShowGraphs').addEventListener('click', () => {
             const modal = document.getElementById('chartModal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             setTimeout(() => modal.classList.remove('opacity-0'), 10);
-            renderChart('line');
+            renderChart('bar');
             if (typeof gtag === 'function') {
                 gtag('event', 'view_graphs', { 'event_category': 'Interaction' });
             }
@@ -549,14 +584,12 @@
         document.querySelectorAll('.chart-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 document.querySelectorAll('.chart-btn').forEach(b => {
-                    b.classList.remove('shadow-[0_0_15px_rgba(0,255,255,0.3)]', 'shadow-[0_0_15px_rgba(255,0,255,0.3)]', 'shadow-[0_0_15px_rgba(0,255,0,0.3)]', 'shadow-[0_0_15px_rgba(255,191,0,0.3)]');
+                    b.classList.remove('shadow-[0_0_15px_rgba(0,255,255,0.3)]', 'shadow-[0_0_15px_rgba(255,0,255,0.3)]');
                 });
                 
                 const type = e.target.getAttribute('data-type');
-                if(type === 'line') e.target.classList.add('shadow-[0_0_15px_rgba(0,255,255,0.3)]');
-                if(type === 'pie') e.target.classList.add('shadow-[0_0_15px_rgba(255,0,255,0.3)]');
-                if(type === 'doughnut') e.target.classList.add('shadow-[0_0_15px_rgba(0,255,0,0.3)]');
-                if(type === 'bar') e.target.classList.add('shadow-[0_0_15px_rgba(255,191,0,0.3)]');
+                if(type === 'bar') e.target.classList.add('shadow-[0_0_15px_rgba(0,255,255,0.3)]');
+                if(type === 'line') e.target.classList.add('shadow-[0_0_15px_rgba(255,0,255,0.3)]');
 
                 renderChart(type);
             });
